@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  button {
+    @apply border-2 border-slate-800 shadow-md rounded-md py-1 px-2 w-52 my-1 duration-150;
+  }
+}
