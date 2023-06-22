@@ -25,7 +25,10 @@ module.exports = {
     minimizer: [new CssMinimizerWebpackPlugin(), new TerserPlugin()],
   },
   plugins: [
-    new HtmlWebpackPlugin({ template: "./public/index.html" }),
+    new HtmlWebpackPlugin({
+      template: "./public/index.html",
+      favicon: "./public/favicon.png",
+    }),
     new MiniCssExtractPlguin({ filename: "[name]-[contenthash].css" }),
   ],
 
