@@ -110,7 +110,7 @@ const TasksList = ({ mode, hours, generated, setGenerated }) => {
             disabled={index !== inProgressIndex}
             onClick={() => handleClick(index)}
             key={`${item.type}-${item.duration}-${index}`}
-            className={`disabled:hover-none w-52 h-52 flex justify-center  items-center m-2  duration-150 text-center rounded-md shadow-md border border-black border-opacity-25 ${
+            className={`disabled:hover-none w-52 h-52 duration-300 flex justify-center  items-center m-2  duration-150 text-center rounded-md shadow-md border border-black border-opacity-25 ${
               clickedIndices.includes(index)
                 ? "bg-green-400 cursor-default"
                 : inProgressIndex === index
