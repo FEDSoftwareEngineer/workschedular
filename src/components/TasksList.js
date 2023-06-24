@@ -116,7 +116,7 @@ const TasksList = ({ mode, hours, generated, setGenerated }) => {
             onClick={() => handleClick(index)}
             key={`${item.type}-${item.duration}-${index}`}
             style={{ animationDelay: `${index / 10}s` }}
-            className={`disabled:hover-none w-52 h-52 duration-300 flex justify-center  items-center m-2  duration-150 text-center rounded-md shadow-md border border-black border-opacity-25 opacity-0 ${
+            className={`disabled:hover-none w-48 h-52 duration-300 flex justify-center  items-center m-2  duration-150 text-center rounded-md shadow-md borde border-black border-opacity-25 opacity-0 ${
               fadeIn ? "fadeIn" : ""
             } ${
               clickedIndices.includes(index)

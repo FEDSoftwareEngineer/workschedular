@@ -23,7 +23,7 @@ const Configuration = ({ setMode, mode, setHours, hours, setGenerated }) => {
   return (
     <section className="grid grid-rows-3 sm:grid-rows-none sm:grid-cols-3 text-center my-9">
       <div>
-        <h2 className="text-lg mt-12">Amount Of Hours For Todays Work</h2>
+        <h2 className="text-lg mb-3">Amount Of Hours For Todays Work</h2>
         <select
           className="border border-black rounded-md shadow-md px-2 py-1 bg-sky-400 text-white font-semibold"
           name="workHours"
@@ -69,7 +69,7 @@ const Configuration = ({ setMode, mode, setHours, hours, setGenerated }) => {
           );
         })}
       </div>
-      <div className="my-12">
+      <div>
         <h2>Generate a plan based on the current setting</h2>
         <button
           onClick={() => setGenerated(true)}
