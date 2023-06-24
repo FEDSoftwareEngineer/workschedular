@@ -39,6 +39,7 @@ const TasksList = ({ mode, hours, generated, setGenerated }) => {
   const [plan, setPlan] = useState([]);
   const [clickedIndices, setClickedIndices] = useState([]);
   const [inProgressIndex, setInProgressIndex] = useState(0);
+  const [fadeIn, setFadeIn] = useState(true);
 
   useEffect(() => {
     setClickedIndices([]);
@@ -64,6 +65,10 @@ const TasksList = ({ mode, hours, generated, setGenerated }) => {
 
     setPlan(currentPlan);
     setGenerated(false);
+    setFadeIn(false);
+    setTimeout(() => {
+      setFadeIn(true);
+    }, 100);
   }, [generated]);
   const handleClick = (index) => {
     if (inProgressIndex === index) {
@@ -110,7 +115,10 @@ const TasksList = ({ mode, hours, generated, setGenerated }) => {
             disabled={index !== inProgressIndex}
             onClick={() => handleClick(index)}
             key={`${item.type}-${item.duration}-${index}`}
-            className={`disabled:hover-none w-52 h-52 duration-300 flex justify-center  items-center m-2  duration-150 text-center rounded-md shadow-md border border-black border-opacity-25 ${
+            style={{ animationDelay: `${index / 10}s` }}
+            className={`disabled:hover-none w-52 h-52 duration-300 flex justify-center  items-center m-2  duration-150 text-center rounded-md shadow-md border border-black border-opacity-25 opacity-0 ${
+              fadeIn ? "fadeIn" : ""
+            } ${
               clickedIndices.includes(index)
                 ? "bg-green-400 cursor-default"
                 : inProgressIndex === index
